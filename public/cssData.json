@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "G3 Architects",
+    "desc": "",
+    "image": "https://i.ibb.co/JRHS92T/project-architects.png",
+    "livelink": "https://emonshimoul.github.io/reset-g3-architects-p2/"
+  },
+  {
+    "id": 2,
+    "title": "Legal Solutions",
+    "desc": "",
+    "image": "https://i.ibb.co/xfkJq7f/project-legal-solutions.png",
+    "livelink": "https://legal-solutions-emon.netlify.app/"
+  }
+]

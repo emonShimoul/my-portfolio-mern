@@ -1,0 +1,58 @@
+#work {
+  min-height: 100vh;
+}
+.portfolio-tab-titles {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.portfolio-tab-titles .filter li a {
+  cursor: pointer;
+  margin: 0 15px;
+  color: #fff;
+  position: relative;
+  padding: 5px 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  line-height: normal;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+@media (max-width: 767px) {
+  .portfolio-tab-titles .filter li a {
+    margin: 0 8px;
+    font-size: 15px;
+  }
+}
+.portfolio-tab-titles .filter li a:after {
+  content: "";
+  width: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 2px;
+  background: #2fbf71;
+  position: absolute;
+  transition: ease all 0.55s;
+}
+.portfolio-tab-titles .filter li a.active:after {
+  width: 100%;
+}
+.portfolio-tab-titles .filter li:first-child {
+  margin-left: 0;
+}
+.portfolio-tab-contents {
+  display: none;
+}
+.active-tab {
+  display: block;
+}
+.more-button {
+  margin-top: 50px;
+}
+.all-projects a {
+  color: #2fbf71;
+}
+.portfolio-card {
+  background-color: #d4d4d4;
+}

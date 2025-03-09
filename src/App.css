@@ -1,0 +1,84 @@
+/* common css */
+body {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: arial;
+  margin: 0;
+  line-height: 1.7;
+  font-size: 15px;
+  font-weight: 300;
+}
+.section {
+  padding: 100px 0;
+}
+@media (max-width: 767px) {
+  .section {
+    padding-bottom: 60px;
+  }
+}
+.pp-section {
+  background: #10101a;
+}
+.pp-scrollable {
+  overflow: auto;
+}
+.m-15px-tb {
+  margin-top: 15px;
+  padding-bottom: 15px;
+}
+
+.title {
+  margin-bottom: 35px;
+}
+.title h3 {
+  color: #fff;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  font-weight: 300;
+  font-size: 30px;
+  display: inline-block;
+  vertical-align: top;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+}
+.title h3:before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  width: 60px;
+  background: #2fbf71;
+  height: 1px;
+}
+.title h3:after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -7px;
+  left: 56px;
+  right: 0;
+  z-index: -1;
+  background: #2fbf71;
+}
+
+/* @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  .container-edited {
+    width: 950px;
+  }
+} */
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  .container {
+    width: 950px;
+  }
+}
+@media (min-width: 1201px) {
+  .main-left {
+    left: 250px;
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 250px);
+  }
+}

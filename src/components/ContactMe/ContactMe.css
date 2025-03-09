@@ -1,0 +1,69 @@
+.contact-info {
+  background: #0b0b13;
+  padding: 30px;
+}
+.contact-info h4 {
+  font-size: 28px;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.contact-info p {
+  font-size: 16px;
+}
+.contact-info ul {
+  margin: 0;
+  padding: 10px 0 0;
+  list-style: none;
+}
+.contact-info li {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.3;
+  position: relative;
+}
+.contact-info li i {
+  width: 30px;
+  text-align: center;
+  color: #2fbf71;
+  font-size: 22px;
+}
+.contact-info li span {
+  padding-left: 10px;
+}
+.contact-info li + li {
+  padding-top: 20px;
+}
+.contact-form {
+  background: #0b0b13;
+  padding: 30px;
+}
+.contact-form h4 {
+  font-weight: 500;
+  color: #fff;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.form-group {
+  margin-bottom: 1.5rem;
+}
+.contact-form .form-control {
+  color: #000;
+  background: #bfbcbc;
+  border: 1px solid #bfbcbc;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  height: calc(2em + 0.75rem + 5px);
+}
+.google-map {
+  margin-top: 50px;
+}
+.google-map iframe {
+  width: 100%;
+  height: 350px;
+}
+.google-map .embed-responsive-21by9 {
+  filter: grayscale(1);
+}
