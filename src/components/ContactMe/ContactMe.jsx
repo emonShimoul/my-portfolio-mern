@@ -11,7 +11,7 @@ const ContactMe = () => {
           <h3>Get in touch.</h3>
         </div>
         <div className="row">
-          <div className="col-lg-5 col-xl-4 m-15px-tb">
+          <div className="col-lg-6 m-15px-tb">
             <div className="contact-info">
               <h4>What`s your story? Get in touch</h4>
               <p>
@@ -21,7 +21,7 @@ const ContactMe = () => {
               <ul>
                 <li className="media">
                   <i className="ti-map"></i>
-                  <span className="media-body">Khulna, Bangladesh</span>
+                  <span className="media-body">Dhaka, Bangladesh</span>
                 </li>
                 <li className="media">
                   <i className="ti-email"></i>
@@ -34,7 +34,7 @@ const ContactMe = () => {
               </ul>
             </div>
           </div>
-          <div className="col-lg-7 col-xl-8 m-15px-tb">
+          <div className="col-lg-6 m-15px-tb">
             <div className="contact-form">
               <h4>Say Something</h4>
               <form id="contact-form">
