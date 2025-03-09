@@ -124,7 +124,7 @@ const ContactMe = () => {
               <div className="embed-responsive embed-responsive-21by9">
                 <iframe
                   className="embed-responsive-item"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.470794744718!2d89.55032967597501!3d22.822065123779712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ff90089b8b1e03%3A0xbba517c23ae5f684!2sShib%20Bari%20More%20Cir%2C%20Khulna%2C%20Bangladesh!5e0!3m2!1sen!2sus!4v1682161239545!5m2!1sen!2sus"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7299.263549080637!2d90.41202048546468!3d23.831689628559936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c65e78f46ee1%3A0x3e009fd37c89634f!2sNikunja%202%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1741548146322!5m2!1sen!2sbd"
                   width="600"
                   height="450"
                   style={{ border: 0 }}
