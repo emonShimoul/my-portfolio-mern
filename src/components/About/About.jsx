@@ -25,7 +25,7 @@ const About = () => {
           <div className="col-lg-6 m-15px-tb">
             <div className="about-info">
               <div className="title">
-                <h3>About me.</h3>
+                <h3 className="">About me.</h3>
               </div>
               <div className="about-text">
                 <h3>Hey! Nice to see you !!</h3>
