@@ -1,112 +1,75 @@
-import { Link, NavLink, Route, Routes, useLocation } from "react-router-dom";
-import "./Portfolio.css";
+import { useState } from "react";
 import PortfolioProject from "../PortfolioProject/PortfolioProject";
 import { useFetch } from "../../hooks/useFetch";
 
 const Portfolio = () => {
-  const location = useLocation();
+  const response = useFetch("data.json");
+  const projects = response?.data;
+  const [activeTab, setActiveTab] = useState("all");
 
-  const allData = useFetch("data.json");
-  // console.log(allData?.data);
+  const tabs = [
+    { id: "all", label: "All" },
+    { id: "css", label: "CSS / Bootstrap" },
+    { id: "js", label: "JavaScript" },
+    { id: "react", label: "React" },
+  ];
 
-  const cssData = useFetch("cssData.json");
-  const jsData = useFetch("jsData.json");
-  const reactData = useFetch("reactData.json");
-  // console.log(projects);
+  // 🔥 Filter logic
+  const filteredProjects =
+    activeTab === "all"
+      ? projects
+      : projects?.filter((item) => item.category === activeTab);
 
   return (
-    <section
-      id="work"
-      data-nav-tooltip="Work"
-      className="pp-section pp-scrollable section dark-bg"
-    >
-      <div className="container">
-        <div className="title">
-          <h3>My Portfolio.</h3>
-        </div>
-        <div className="portfolio-tab-titles">
-          <ul className="filter nav">
-            <li className="portfolio-tab-links">
-              <Link
-                to="/portfolio"
-                className={location.pathname === "/portfolio" ? "active" : ""}
-              >
-                All
-              </Link>
-            </li>
-            <li className="portfolio-tab-links">
-              <NavLink to="css">CSS / Bootstrap</NavLink>
-            </li>
-            <li className="portfolio-tab-links">
-              <NavLink to="js">JavaScript</NavLink>
-            </li>
-            <li className="portfolio-tab-links">
-              <NavLink to="react">React</NavLink>
-            </li>
-          </ul>
-        </div>
+    <section className="min-h-screen bg-[#10101a] text-white px-6 lg:px-16 py-12">
+      
+      {/* TITLE */}
+      <div className="mb-10">
+        <h3 className="text-3xl uppercase tracking-[6px] relative inline-block">
+          My Portfolio.
+          <span className="block w-[60px] h-[2px] bg-green-500 mt-2"></span>
+        </h3>
+      </div>
 
-        <div className="portfolio-tab-contents active-tab">
-          <div className="row row-cols-1 row-cols-md-3 g-4">
-            {location.pathname === "/portfolio" &&
-              allData?.data?.map((project) => (
-                <PortfolioProject
-                  heading="All Projects"
-                  key={project.id}
-                  project={project}
-                ></PortfolioProject>
-              ))}
-
-            <Routes>
-              <Route
-                path="all"
-                element={allData?.data?.map((project) => (
-                  <PortfolioProject
-                    key={project.id}
-                    project={project}
-                  ></PortfolioProject>
-                ))}
-              ></Route>
-              <Route
-                path="css"
-                element={cssData?.data?.map((project) => (
-                  <PortfolioProject
-                    key={project.id}
-                    project={project}
-                  ></PortfolioProject>
-                ))}
-              ></Route>
-              <Route
-                path="js"
-                element={jsData?.data?.map((project) => (
-                  <PortfolioProject
-                    key={project.id}
-                    project={project}
-                  ></PortfolioProject>
-                ))}
-              ></Route>
-              <Route
-                path="react"
-                element={reactData?.data?.map((project) => (
-                  <PortfolioProject
-                    key={project.id}
-                    project={project}
-                  ></PortfolioProject>
-                ))}
-              ></Route>
-            </Routes>
-          </div>
-        </div>
-
-        <div className="col-12 all-projects more-button">
-          <Link
-            className="px-btn px-btn-theme"
-            to="https://github.com/emonShimoul"
-            target="_blank"
+      {/* TABS */}
+      <div className="flex flex-wrap gap-6 mb-8">
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            className={`relative text-sm uppercase tracking-[2px] pb-1 transition ${
+              activeTab === tab.id
+                ? "text-green-500"
+                : "text-white/80 hover:text-white"
+            }`}
           >
-            More Projects
-          </Link>
-        </div>
+            {tab.label}
+
+            {/* underline */}
+            {activeTab === tab.id && (
+              <span className="absolute left-0 bottom-0 w-full h-[2px] bg-green-500"></span>
+            )}
+          </button>
+        ))}
+      </div>
+
+      {/* PROJECT GRID */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredProjects?.map((project) => (
+          <PortfolioProject key={project.id} project={project} />
+        ))}
+      </div>
+
+      {/* MORE BUTTON */}
+      <div className="mt-12 text-center">
+        <a
+          href="https://github.com/emonShimoul"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-block bg-green-500 text-white px-6 py-2 shadow hover:bg-white hover:text-green-500 transition"
+        >
+          More Projects
+        </a>
       </div>
     </section>
   );
