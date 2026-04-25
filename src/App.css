@@ -74,11 +74,11 @@ body {
     width: 950px;
   }
 }
-@media (min-width: 1201px) {
+/* @media (min-width: 1201px) {
   .main-left {
     left: 250px;
     position: absolute;
     height: 100%;
     width: calc(100% - 250px);
   }
-}
+} */

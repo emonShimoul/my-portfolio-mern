@@ -10,19 +10,21 @@ import Blogs from "./components/Blogs/Blogs";
 
 function App() {
   return (
-    <>
+    <div className="min-h-screen bg-[#10101a] text-white">
+      {/* Sidebar */}
       <Header />
-      <main className="main-left pp-main-section">
+
+      <main className="lg:ml-[250px] relative z-30 bg-[#10101a] pt-[60px] lg:pt-0">
         <Routes>
-          <Route element={<About />} path="/about"></Route>
-          <Route element={<Services />} path="/services"></Route>
-          <Route element={<Portfolio />} path="/portfolio/*"></Route>
-          <Route element={<ContactMe />} path="/contactme"></Route>
-          <Route element={<Blogs />} path="/blogs"></Route>
-          <Route element={<Home />} path="/"></Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/portfolio/*" element={<Portfolio />} />
+          <Route path="/contactme" element={<ContactMe />} />
+          <Route path="/blogs" element={<Blogs />} />
         </Routes>
       </main>
-    </>
+    </div>
   );
 }
 
