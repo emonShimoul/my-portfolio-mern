@@ -1,210 +1,175 @@
 import { Link } from "react-router-dom";
-import "./About.css";
-import magento from "../../assets/images/magento.png";
 import aboutMe from "../../assets/images/about-me-dark.png";
-import react from "../../assets/images/react.png";
+
+// ===== DYNAMIC DATA (future: from backend) =====
+
+const aboutData = {
+  title: "Frontend Developer | MERN Learner",
+  desc: `I am a passionate Frontend Developer with strong experience in React, JavaScript, and modern UI development. I focus on building clean, responsive, and user-friendly web applications.
+
+Currently, I am expanding my skills into full-stack development using Node.js, Express, and MongoDB. Alongside development, I have professional experience in digital advertising, which helps me understand both technical and business aspects of online platforms.`,
+  stats: [
+    { value: "50+", label: "Projects Completed" },
+    { value: "20+", label: "Satisfied Clients" },
+  ],
+};
+
+const skills = [
+  { name: "HTML & CSS", level: "95%" },
+  { name: "JavaScript", level: "90%" },
+  { name: "React", level: "85%" },
+  { name: "Tailwind CSS", level: "90%" },
+];
+
+const experiences = [
+  {
+    title: "Digital AdOps Executive",
+    company: "Service Engine BPO",
+    duration: "Aug 2023 - Present",
+    desc: "Working with Google Ad Manager and AdBook platforms to manage, optimize, and monitor digital advertising campaigns. Responsible for ad operations, performance tracking, and ensuring smooth campaign delivery. This role strengthened my analytical thinking and understanding of real-world business systems.",
+  },
+  {
+    title: "Frontend Developer",
+    company: "AminTech",
+    duration: "June 2020 - December 2022",
+    desc: "Worked on frontend development using Magento and JavaScript to build and customize e-commerce websites. Gained strong experience in UI development, debugging, and working in a team environment on real-world projects.",
+  },
+  {
+    title: "Freelance Projects (React)",
+    company: "Self-employed",
+    duration: "2022 - Present",
+    desc: "Developed multiple frontend applications using React, including dynamic interfaces, authentication systems, and API-based projects. Focused on improving UI/UX and writing clean, maintainable code.",
+  },
+  {
+    title: "Full-Stack Development (Learning)",
+    company: "Personal Learning",
+    duration: "Ongoing",
+    desc: "Currently learning and building projects using Node.js, Express, and MongoDB to become a complete MERN stack developer.",
+  },
+];
 
 const About = () => {
   return (
-    <section
-      id="about"
-      data-nav-tooltip="About"
-      className="pp-section pp-scrollable section counter"
-    >
-      <div className="container">
-        <div className="row align-items-center justify-content-center">
-          <div className="col-lg-6 m-15px-tb">
-            <div className="about-me">
-              <div className="img">
-                <div className="img-in">
-                  <img src={aboutMe} title="" alt="" />
+    <section className="min-h-screen bg-[#10101a] text-white px-6 lg:px-16 xl:px-24 py-16">
+
+      <div className="max-w-7xl mx-auto">
+
+        {/* ===== TOP SECTION ===== */}
+        <div className="grid lg:grid-cols-[1fr_1.5fr] gap-10 xl:gap-16 items-center">
+
+          {/* IMAGE */}
+          <div className="flex justify-center">
+            <img
+              src={aboutMe}
+              alt="About"
+              className="w-full max-w-md rounded-xl"
+            />
+          </div>
+
+          {/* CONTENT */}
+          <div>
+            <h3 className="text-4xl xl:text-5xl font-light uppercase tracking-[6px] mb-6">
+              About Me
+            </h3>
+
+            <h4 className="text-2xl font-semibold mb-4">
+              {aboutData.title}
+            </h4>
+
+            <p className="text-gray-400 mb-8 leading-relaxed whitespace-pre-line">
+              {aboutData.desc}
+            </p>
+
+            {/* STATS */}
+            <div className="flex flex-wrap gap-10 mb-8">
+              {aboutData.stats.map((stat, i) => (
+                <div key={i}>
+                  <h3 className="text-3xl font-bold text-green-500">
+                    {stat.value}
+                  </h3>
+                  <p className="text-sm text-gray-400">
+                    {stat.label}
+                  </p>
                 </div>
-              </div>
+              ))}
+            </div>
+
+            {/* BUTTONS */}
+            <div className="flex gap-4">
+              <Link
+                to="/contactme"
+                className="px-6 py-2 bg-green-500 hover:bg-white hover:text-green-500 transition"
+              >
+                Contact Me
+              </Link>
+
+              <Link
+                to="/portfolio"
+                className="px-6 py-2 border border-green-500 text-green-500 hover:bg-green-500 hover:text-white transition"
+              >
+                Portfolio
+              </Link>
             </div>
           </div>
-          <div className="col-lg-6 m-15px-tb">
-            <div className="about-info">
-              <div className="title">
-                <h3 className="">About me.</h3>
+        </div>
+
+        {/* ===== SKILLS ===== */}
+        <div className="mt-24">
+          <h3 className="text-3xl uppercase tracking-[6px] mb-12 text-center">
+            Skills
+          </h3>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-x-16 gap-y-8 max-w-6xl mx-auto">
+
+            {skills.map((skill, i) => (
+              <div key={i}>
+                <div className="flex justify-between text-sm mb-2">
+                  <span>{skill.name}</span>
+                  <span>{skill.level}</span>
+                </div>
+
+                <div className="w-full bg-gray-700 h-2 rounded">
+                  <div
+                    className="bg-green-500 h-2 rounded"
+                    style={{ width: skill.level }}
+                  ></div>
+                </div>
               </div>
-              <div className="about-text">
-                <h3>Hey! Nice to see you !!</h3>
-                <p>
-                  I&apos;m a Front-End Developer with a huge love for{" "}
-                  <i>ReactJS</i>. Currently, I&apos;m open to work and
-                  employment opportunities. <br /> I am specialized on HTML,
-                  CSS, Tailwind, Javascript and ReactJS. I love to read books
-                  and listen to music. Currently I am working with NodeJS,
-                  ExpressJS and MongoDB. I am dedicated to building easy-to-use,
-                  user-friendly web app.
+            ))}
+
+          </div>
+        </div>
+
+        {/* ===== EXPERIENCE ===== */}
+        <div className="mt-24">
+          <h3 className="text-3xl uppercase tracking-[6px] mb-12 text-center">
+            Experience
+          </h3>
+
+          <div className="space-y-8 max-w-6xl mx-auto">
+
+            {experiences.map((exp, i) => (
+              <div
+                key={i}
+                className="bg-[#0b0b13] p-6 rounded-lg hover:bg-[#13131d] transition"
+              >
+                <h4 className="text-xl font-semibold">
+                  {exp.title}
+                </h4>
+
+                <p className="text-sm text-gray-400">
+                  {exp.company} | {exp.duration}
                 </p>
-                <div className="row">
-                  <div className="col-auto">
-                    <div className="media align-items-center">
-                      <span className="count">50+</span>
-                      <div className="media-body">
-                        Projects <br />
-                        Completed.
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-auto">
-                    <div className="media align-items-center">
-                      <span className="count">20+</span>
-                      <div className="media-body">
-                        Satisfied <br />
-                        Clients.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="btn-bar">
-                  <Link className="px-btn px-btn-theme" to="/contactme">
-                    <span>Contact Me</span>
-                  </Link>
-                  <Link className="px-btn px-btn-theme" to="/portfolio">
-                    <span>Portfolio</span>
-                  </Link>
-                </div>
+
+                <p className="text-gray-400 mt-3 text-sm leading-relaxed">
+                  {exp.desc}
+                </p>
               </div>
-            </div>
+            ))}
+
           </div>
         </div>
-        <div className="separated"></div>
-        <div className="title">
-          <h3>Courses &amp; Skills</h3>
-        </div>
-        <div className="row">
-          <div className="col-lg-4 m-15px-tb">
-            <ul className="aducation-box">
-              <li>
-                <span>2023 (3 Months)</span>
-                <h6>Web Development</h6>
-                <p>LICT, Bangladesh Computer Council(BCC)</p>
-              </li>
-              <li>
-                <span>2024 (6 Months)</span>
-                <h6>Complete Web Development</h6>
-                <p>Programming Hero</p>
-              </li>
-              <li>
-                <span>2024 (37.5 Total Hours)</span>
-                <h6>Modern React with Redux</h6>
-                <p>Udemy</p>
-              </li>
-            </ul>
-          </div>
-          <div className="col-lg-7 ml-auto m-15px-tb">
-            <div className="skills-box">
-              <h3>My skills</h3>
-              <p>
-                Responsible, highly resourceful, detail-oriented, reliable,
-                goal-oriented, relentless, self-motivated, open-minded, and
-                willing to learn. I have gained hands-on experience creating
-                websites and applications in Front-End development.
-              </p>
-              <div className="skill-lt">
-                <h6>HTML &amp; CSS</h6>
-                <div className="skill-bar">
-                  <div className="skill-bar-in" style={{ width: "95%" }}>
-                    <span data-toggle="tooltip" title="92%"></span>
-                  </div>
-                </div>
-              </div>
-              <div className="skill-lt">
-                <h6>JavaScript</h6>
-                <div className="skill-bar">
-                  <div className="skill-bar-in" style={{ width: "90%" }}>
-                    <span data-toggle="tooltip" title="86%"></span>
-                  </div>
-                </div>
-              </div>
-              <div className="skill-lt">
-                <h6>Bootstrap</h6>
-                <div className="skill-bar">
-                  <div className="skill-bar-in" style={{ width: "92%" }}>
-                    <span data-toggle="tooltip" title="72%"></span>
-                  </div>
-                </div>
-              </div>
-              <div className="skill-lt">
-                <h6>React</h6>
-                <div className="skill-bar">
-                  <div className="skill-bar-in" style={{ width: "82%" }}>
-                    <span data-toggle="tooltip" title="88%"></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="separated"></div>
-        <div className="title">
-          <h3>Experience.</h3>
-        </div>
-        <div className="resume-box">
-          <div className="resume-row">
-            <div className="row">
-              <div className="col-sm-3 col-md-3 col-xl-2">
-                <div className="rb-left">
-                  <img src={magento} title="" alt="" />
-                </div>
-              </div>
-              <div className="col-sm-9 col-md-9 col-xl-10">
-                <div className="rb-right mt-3">
-                  <h6>Magento Theme Developer</h6>
-                  <label>AminTech | Office | June 2020 - December 2022</label>
-                  <div className="rb-time">Full Time</div>
-                  <p>
-                    During my job with AminTech, I gained hands-on experience
-                    coding websites and applications in Magento 2. One of my
-                    projects was developing themes for an e-commerce website
-                    using Magento. Through my job, I also gained valuable
-                    teamwork and communication skills that will make me a great
-                    asset to Amin Tech.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="resume-row">
-            <div className="row">
-              <div className="col-sm-3 col-md-3 col-xl-2">
-                <div className="rb-left">
-                  <img src={react} title="" alt="" />
-                </div>
-              </div>
-              <div className="col-sm-9 col-md-9 col-xl-10">
-                <div className="rb-right mt-1">
-                  <h6>Front-End Developer (React)</h6>
-                  <label>Freelance | Remote | Jan 2021 - Present</label>
-                  <div className="rb-time">Full Time</div>
-                  <p>
-                    I have worked as a Web Developer in Magento 2 Development
-                    for a long time. I have hands-on experience in JavaScript.
-                    As I am passionate to javascript I have completed some
-                    courses on React and also done a lot of projects using
-                    React. I have also worked with Firebase Authentication, JWT
-                    Token etc. At present I am continuing my study as a MERN
-                    stack developer. My works can be found in
-                    <Link to="/work" className="text-white fw-bold px-2">
-                      My Portfolio
-                    </Link>
-                    section and also in my
-                    <Link
-                      to="https://github.com/emonShimoul"
-                      className="text-white fw-bold ps-2"
-                      target="_blank"
-                    >
-                      Github
-                    </Link>
-                    .
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </div>
     </section>
   );
