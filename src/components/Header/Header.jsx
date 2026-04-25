@@ -31,7 +31,7 @@ const Header = () => {
   return (
     <>
       {/* MOBILE HEADER */}
-      <div className="lg:hidden fixed top-0 left-0 w-full z-30 bg-[#10101a] px-4 py-0 flex items-center justify-between">
+      <div className="lg:hidden fixed top-0 left-0 w-full z-50 bg-[#10101a] px-4 py-0 flex items-center justify-between">
         <Link to="/" className="text-white font-bold text-xl">
           Emon
         </Link>
@@ -48,7 +48,7 @@ const Header = () => {
 
       {/* SIDEBAR */}
       <aside
-        className={`fixed top-0 left-0 h-full w-[250px] bg-[#0c0c14] z-20 transform transition-transform duration-300 
+        className={`fixed top-0 left-0 h-full w-[250px] bg-[#0c0c14] z-40 transform transition-transform duration-300 
         ${isOpen ? "translate-x-0" : "-translate-x-full"} 
         lg:translate-x-0`}
       >
@@ -59,7 +59,7 @@ const Header = () => {
             <div className="relative text-center pt-16 pb-6 px-4">
 
               {/* Overlapping background shape */}
-              <div className="absolute -top-40 left-[-50px] w-[310px] h-[310px] bg-green-500 rounded-b-full z-0"></div>
+              <div className="absolute -top-40 left-[-50px] w-[310px] h-[310px] bg-green-500 rounded-b-full z-0 pointer-events-none"></div>
 
               {/* Content */}
               <div className="relative z-10 mt-4">
@@ -98,7 +98,7 @@ const Header = () => {
           </div>
 
           {/* SOCIAL ICONS */}
-          <div className="flex justify-center gap-4 pb-4">
+          <div className="flex justify-center gap-4 pb-4 mt-4">
             <a href="https://www.facebook.com/emon.shimoul" target="_blank" rel="noreferrer">
               <FaFacebookF />
             </a>
