@@ -2,9 +2,10 @@
   {
     "id": 1,
     "title": "G3 Architects",
-    "desc": "",
+    "desc": "This is the G3 Architects description.",
     "image": "https://i.ibb.co/JRHS92T/project-architects.png",
     "livelink": "https://emonshimoul.github.io/reset-g3-architects-p2/",
+    "github": "https://github.com/emonShimoul/reset-g3-architects-p2",
     "category": "css"
   },
   {
@@ -13,6 +14,7 @@
     "desc": "",
     "image": "https://i.ibb.co/xfkJq7f/project-legal-solutions.png",
     "livelink": "https://legal-solutions-emon.netlify.app/",
+    "github": "https://github.com/emonShimoul/reset-legal-solution-p3",
     "category": "css"
   },
   {
@@ -21,6 +23,7 @@
     "desc": "",
     "image": "https://i.ibb.co/3NwjGCk/project-guess-my-number.png",
     "livelink": "https://emonshimoul.github.io/guess-my-number-js/",
+    "github": "https://github.com/emonShimoul/guess-my-number-js",
     "category": "js"
   },
   {
@@ -29,6 +32,7 @@
     "desc": "",
     "image": "https://i.ibb.co/hR5CLZW/project-pig-game.png",
     "livelink": "https://emonshimoul.github.io/pig-game-js/",
+    "github": "https://github.com/emonShimoul/pig-game-js",
     "category": "js"
   },
   {
@@ -37,6 +41,7 @@
     "desc": "",
     "image": "https://i.ibb.co/KD1Djb8/project-macbook.jpg",
     "livelink": "https://emonshimoul.github.io/mac-book-pro-js/",
+    "github": "https://github.com/emonShimoul/mac-book-pro-js",
     "category": "js"
   },
   {
@@ -45,6 +50,7 @@
     "desc": "",
     "image": "https://i.ibb.co/T1ZZJnW/project-geometry-genius.png",
     "livelink": "https://geometry-genius-emon.netlify.app/",
+    "github": "https://github.com/emonShimoul/reset-geometry-genius-p5",
     "category": "react"
   },
   {
@@ -53,6 +59,7 @@
     "desc": "",
     "image": "https://i.ibb.co/F67x5RY/project-ema-john-simple.png",
     "livelink": "https://ema-john-simple-emonshimul.netlify.app/",
+    "github": "https://github.com/emonShimoul/ema-john-pagination-client-react",
     "category": "react"
   }
 ]

@@ -5,6 +5,7 @@ import { useFetch } from "../../hooks/useFetch";
 const Portfolio = () => {
   const response = useFetch("data.json");
   const projects = response?.data?.data || response?.data || [];
+  
   const [activeTab, setActiveTab] = useState("all");
 
   const tabs = [
@@ -70,7 +71,7 @@ const Portfolio = () => {
           href="https://github.com/emonShimoul"
           target="_blank"
           rel="noreferrer"
-          className="inline-block bg-green-500 text-white px-6 py-2 shadow hover:bg-white hover:text-green-500 transition"
+          className="inline-block bg-yellow-500 text-white px-6 py-2 font-semibold shadow hover:bg-white hover:!text-black transition"
         >
           More Projects
         </a>
