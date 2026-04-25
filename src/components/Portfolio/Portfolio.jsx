@@ -4,7 +4,7 @@ import { useFetch } from "../../hooks/useFetch";
 
 const Portfolio = () => {
   const response = useFetch("data.json");
-  const projects = response?.data;
+  const projects = response?.data?.data || response?.data || [];
   const [activeTab, setActiveTab] = useState("all");
 
   const tabs = [
@@ -52,6 +52,10 @@ const Portfolio = () => {
           </button>
         ))}
       </div>
+
+      {filteredProjects?.length === 0 && (
+        <p className="text-gray-400">No projects found</p>
+      )}
 
       {/* PROJECT GRID */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
