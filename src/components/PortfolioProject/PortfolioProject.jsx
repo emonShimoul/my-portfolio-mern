@@ -55,9 +55,9 @@ const PortfolioProject = ({ project }) => {
               href={github}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 border border-white text-white px-4 py-2 text-sm hover:bg-white hover:!text-black transition"
+              className="inline-flex items-center gap-2 border border-white text-white px-2 py-2 text-sm hover:bg-white hover:!text-black transition"
             >
-              Code <FaGithub />
+              GitHub <FaGithub />
             </a>
           )}
         </div>
