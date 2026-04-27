@@ -7,7 +7,7 @@ const Home = () => {
       id="home"
       className="min-h-screen flex items-center bg-[#10101a] overflow-hidden"
     >
-      <div className="w-full px-16 lg:px-32 w-full grid lg:grid-cols-2 gap-10 items-center relative">
+      <div className="w-full px-16 lg:px-32 grid lg:grid-cols-2 gap-10 items-center relative">
 
         {/* RIGHT BACKGROUND SHAPE */}
         <div className="hidden lg:block absolute -top-40 -right-40 w-[500px] h-[500px] bg-[#0b0b13] rounded-full z-0"></div>
